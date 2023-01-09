@@ -19,15 +19,13 @@ x, y = smote.fit_resample(x, y)
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.30, random_state=42)
 
 params = [
-    {'bootstrap': [True, False],
-    'max_depth': [80, 90, 100],
-    'max_features': ['sqrt'],
-    'min_samples_leaf': [3,4],
+    {'max_depth': [80, 90, 100],
+    'min_samples_leaf': [3,4,5],
     'min_samples_split': [5, 10],
     'n_estimators': [800, 1000]}
 ]
 
-clf = GridSearchCV(RandomForestClassifier(random_state=42), param_grid=params, cv= 5, verbose=2, refit=True)
+clf = GridSearchCV(RandomForestClassifier(random_state=42, max_features='sqrt', bootstrap=True), param_grid=params, cv= 5, verbose=2, refit=True)
 clf.fit(x_train , y_train)
 y_pred = clf.predict(x_test)
 acc = clf.score(x_test, y_test)
