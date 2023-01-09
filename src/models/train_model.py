@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from imblearn.over_sampling import SMOTE
 
 df = pd.read_csv("./data/raw/train_processed.csv")
-
+df = df.sample(n=100000)
 x = df.iloc[:, :-1]
 y = df.iloc[:, -1]
 
