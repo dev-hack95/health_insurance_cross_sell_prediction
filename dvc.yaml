@@ -1,0 +1,6 @@
+stages:
+  preprocess:
+    cmd: python3 src/features/preprocess.py data/raw/train.csv
+    deps:
+    - data/raw/train.csv
+    - src/features/preprocess.py
