@@ -15,9 +15,6 @@ jobs:
           TB_CREDENTIALS: ${{ secrets.TB_CREDENTIALS }}
         run: |
           pip install -r requirements.txt
-          cml tensorboard connect \
-            --logdir=./logs \
-            --name="Go to tensorboard" \
-            --md >> report.md
-          cml comment create report.md
+          cml-tensorboard-dev --logdir logs --md --name "Go to tensorboard" >> report.md
+          cml-send-comment report.md
           python ./src/models/train_model.py
