@@ -2,6 +2,14 @@ import datetime
 import pandas as pd
 import tensorflow as tf
 import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+from sklearn.metrics import f1_score
+from sklearn.metrics import cohen_kappa_score
+from sklearn.metrics import roc_auc_score
+from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import SMOTE
 
@@ -18,10 +26,13 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random
 model_dl = tf.keras.Sequential([
         tf.keras.layers.Dense(128, activation='relu'),
         tf.keras.layers.Dense(128, activation='relu'),
+        tf.keras.layers.Dropout(0.3),
         tf.keras.layers.Dense(256, activation='relu'),
         tf.keras.layers.Dense(256, activation='relu'),
+        tf.keras.layers.Dropout(0.3),
         tf.keras.layers.Dense(512, activation='relu'),
         tf.keras.layers.Dense(512, activation='relu'),
+        tf.keras.layers.Dropout(0.3),
         tf.keras.layers.Dense(1, activation='sigmoid', kernel_regularizer=tf.keras.regularizers.l2(l2=0.1))
     ])
 
@@ -30,7 +41,7 @@ model_dl.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
                  metrics=['accuracy'])
 
 log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-cb_list = [tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=20),  tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)]
+cb_list = [tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=20)]
 
 history = model_dl.fit(x_train, y_train,
                    epochs=60,

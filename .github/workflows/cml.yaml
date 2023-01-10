@@ -16,8 +16,8 @@ jobs:
           python ./src/models/train_model.py  # generate plot.png
  
           # Create CML report
-          echo '![](./accuracy.png "Accuray")' >> report.md
-          echo '![](./loss.png "Loss")' >> report.md
-          cml comment create report.md
+          cml publish accuracy.png --md --title 'Accuracy' >> report.md
+          cml publish loss.png --md --title 'Loss' >> report.md
+          cml send-comment report.md
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
