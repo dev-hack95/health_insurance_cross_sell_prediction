@@ -40,6 +40,7 @@ history = model_dl.fit(x_train, y_train,
 plt.plot(history.history['accuracy'])
 plt.plot(history.history['val_accuracy'])
 plt.savefig("accuracy.png")
+
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
-plt.savfig("loss.png")
+plt.savefig("loss.png")
