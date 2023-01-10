@@ -2,6 +2,55 @@ Health-Insurnace-Cross-Sell-Prediction
 ==============================
 
 
+## Authors
+
+- [@dev-hack95](https://www.github.com/dev-hack95)
+
+## Project Status
+- Complete
+
+## Table of Contents
+
+  - [Problem Statement](#Problem-Statement)
+  - [Data source](#data-source)
+  - [Methods](#methods)
+  - [Tech Stack](#tech-stack)
+  - [Quick glance at the results](#quick-glance-at-the-results)
+  - [Run Locally](#run-locally)
+  - [Explore the notebook](#explore-the-notebook)
+  - [Deployment](#Deployment)
+  - [Docker](#Docker)
+  - [Kubernetes](#Kubernetes)
+  - [Repository structure](#repository-structure)
+  - [Results](#Results)
+  
+## Problem Statement
+  - Create a machine learning model on diabetes detection
+  
+## Data Source
+  - [Diabetes Prediction dataset](https://www.kaggle.com/datasets/vikasukani/diabetes-data-set)
+
+## Methods
+
+- Exploratory data analysis
+- Bivariate analysis
+- Multivariate correlation
+- Explainable AI
+- Model Comparison
+- Model deployment
+
+## Tech Stack
+
+- Python (refer to requirement.txt for the packages used in this project)
+- Tensorboard
+- Javascript
+- Docker
+- Kubernetes
+- DVC
+- CML
+- Github actions
+
+## Repository structure
 Project Organization
 ------------
 
