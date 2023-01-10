@@ -9,14 +9,14 @@ from sklearn.ensemble import RandomForestClassifier
 from imblearn.over_sampling import SMOTE
 
 df = pd.read_csv("./data/raw/train_processed.csv")
-df = df.sample(n=1000)
+df = df.sample(n=50000)
 x = df.iloc[:, :-1]
 y = df.iloc[:, -1]
 
 smote = SMOTE(random_state=42)
 x, y = smote.fit_resample(x, y)
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.30, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random_state=42)
 
 params = [
     {'max_depth': [80, 90, 100],
