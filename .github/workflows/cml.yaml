@@ -18,6 +18,6 @@ jobs:
           TB_CREDENTIALS: ${{ secrets.TB_CREDENTIALS }}
         run: |
           pip install -r requirements.txt
+          python ./src/models/train_model.py
           cml tensorboard connect --logdir=./logs --title=Training --md >> report.md
           cml-send-comment report.md
-          python ./src/models/train_model.py
