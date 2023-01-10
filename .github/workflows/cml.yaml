@@ -16,7 +16,7 @@ jobs:
           python ./src/models/train_model.py  
  
           # Create CML report
-          cat metrics.txt >> report.md
+          #cat metrics.txt >> report.md
           echo '![](./accuracy.png "Accuracy")' >> report.md
           echo '![](./accuracy.png "Loss")' >> report.md
           cml comment create report.md

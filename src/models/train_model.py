@@ -24,7 +24,7 @@ model_dl = tf.keras.Sequential([
         tf.keras.layers.Dense(256, activation='relu'),
         tf.keras.layers.Dense(512, activation='relu'),
         tf.keras.layers.Dense(512, activation='relu'),
-        tf.keras.layers.Dense(1, activation='sigmoid')
+        tf.keras.layers.Dense(1, activation='sigmoid', kernel_regularizer=tf.keras.regularizers.l2(l2=0.1))
     ])
 
 model_dl.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
