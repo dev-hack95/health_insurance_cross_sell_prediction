@@ -1,0 +1,11 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python3 src/features/preprocess.py data/raw/train.csv
+    deps:
+    - path: data/raw/train.csv
+      md5: 578f3642d464e21249ea4489cf760be8
+      size: 21432357
+    - path: src/features/preprocess.py
+      md5: a4f2842ee00f957a55613446fcbeac4f
+      size: 3241
