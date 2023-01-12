@@ -26,7 +26,7 @@ params = [
      }
 ]
 
-clf = GridSearchCV(ExtraTreesClassifier(max_depth=5), param_grid=params, cv= 5, verbose=2, refit=True)
+clf = ExtraTreesClassifier(n_estimators = 100, criterion = 'gini', random_state = 0)
 clf.fit(x_train , y_train)
 print(clf.best_params_)
 y_pred = clf.predict(x_test)
