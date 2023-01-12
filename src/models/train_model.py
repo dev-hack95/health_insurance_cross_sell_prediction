@@ -18,13 +18,7 @@ x, y = smote.fit_resample(x, y)
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random_state=42)
 
 
-params = [
-    {
-     'n_estimators': [100, 250, 500],
-     'criterion': ['gini', 'entropy', 'log_loss'],
-     'max_features': ['sqrt', 'log2'],
-     }
-]
+
 
 clf = ExtraTreesClassifier(n_estimators = 100, criterion = 'gini', random_state = 0)
 clf.fit(x_train , y_train)
