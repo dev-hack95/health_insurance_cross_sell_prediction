@@ -22,7 +22,6 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random
 
 clf = ExtraTreesClassifier(n_estimators = 100, criterion = 'gini', random_state = 0)
 clf.fit(x_train , y_train)
-print(clf.best_params_)
 y_pred = clf.predict(x_test)
 acc = clf.score(x_test, y_test)
 print(acc)
