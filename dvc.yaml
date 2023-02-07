@@ -1,0 +1,11 @@
+stages:
+  preprocess:
+    cmd: python src/features/preprocess.py data/raw/train.csv
+    deps:
+    - data/raw/train.csv
+    - src/features/preprocess.py
+  train:
+    cmd: .\src\models\train_model.py .\artifacts\
+    deps:
+    - .\artifacts\
+    - .\src\models\train_model.py

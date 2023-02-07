@@ -1,0 +1,21 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/features/preprocess.py data/raw/train.csv
+    deps:
+    - path: data/raw/train.csv
+      md5: 578f3642d464e21249ea4489cf760be8
+      size: 21813467
+    - path: src/features/preprocess.py
+      md5: 11b70b9f68793e23d59a1b9a500770e6
+      size: 3831
+  train:
+    cmd: .\src\models\train_model.py .\artifacts\
+    deps:
+    - path: .\artifacts\
+      md5: e23a03b16039706b6753eb84409d9de3.dir
+      size: 238929358
+      nfiles: 4
+    - path: .\src\models\train_model.py
+      md5: 070262d202b94980cf29a8a5c346f8f6
+      size: 1486
