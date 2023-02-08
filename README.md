@@ -7,7 +7,7 @@ Health-Insurnace-Cross-Sell-Prediction
 - [@dev-hack95](https://www.github.com/dev-hack95)
 
 ## Project Status
-- Complete
+- Complete (Note: Use dev-bac branch , Bagging Classifer giving heighest accuracy)
 
 ## Table of Contents
 
