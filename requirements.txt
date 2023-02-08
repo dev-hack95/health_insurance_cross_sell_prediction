@@ -5,3 +5,4 @@ dvc
 matplotlib
 seaborn
 imbalanced-learn
+streamlit
