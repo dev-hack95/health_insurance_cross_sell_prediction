@@ -9,7 +9,7 @@ pipeline {
 
             stage("Check Logs") {
                 steps {
-                    sh 'ls -la'
+                    sh 'ls -lah'
                 }
             }
 
@@ -21,14 +21,19 @@ pipeline {
 
             stage("Check logs for pickle files") {
                 steps {
-                    sh 'cd ./artifacts'
-                    sh 'ls -la'
+                    sh 'cd ./artifacts && ls -lah'
                 }
             }
 
             stage("Build") {
                 steps {
                     sh 'docker build -f ./Dockerfile . -t myapp:latest'
+                }
+            }
+            
+            stage("Check logs for model.pkl") {
+                steps {
+                    sh 'cd ./artifacts && ls -lah'
                 }
             }
 
