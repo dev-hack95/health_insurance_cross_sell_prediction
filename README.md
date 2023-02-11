@@ -47,6 +47,87 @@ Health-Insurnace-Cross-Sell-Prediction
 - CML
 - Github actions
 
+## Quick glance at the results
+
+```bash
+{'Logistic_Regression': 0.7835004557885141,
+ 'Navie_Bayes': 0.7813354603463992,
+ 'lda': 0.7843740504405956,
+ 'Random_Forest': 0.9179580674567,
+ 'Ada_boost': 0.8453737465815861,
+ 'Gradient_boost': 0.8599969614099058,
+ 'Bagging_Classifer': 0.9312518991188089,
+ 'knn_classifier': 0.8704421148587056,
+ 'Decision_tree': 0.8915223336371924,
+ 'Extr_tree': 0.9226678821027043}
+ ```
+ 
+Top 3 models (with default parameters)
+
+| Model     	                |  score 	          |
+|-------------------	        |------------------	|
+| Extra Tree Classifier  	    | 92.3% 	          |
+| Random Forest    	          | 91.8% 	          |
+| Bagging_Classifer           | 93.2% 	          |
+
+
+
+## Run Locally
+
+1) Initialize git
+
+```bash
+git init
+```
+
+
+2) Clone the project
+
+```bash
+git clone -b dev-bac https://github.com/dev-hack95/Diabetes_detection
+```
+
+3) Enter the project directory
+
+```bash
+cd Diabetes_detection
+```
+
+4) Install the requriments
+
+```bash
+pip install -r requirements.txt
+```
+5) DVC
+
+```bash
+dvc repro
+```
+
+6) Run application
+
+```bash
+streamlit run app.py
+```
+
+## Explore the notebook
+
+To explore the notebook file [here](https://github.com/dev-hack95/health_insurance_cross_sell_prediction/blob/dev-bac/notebooks/Health%20Insurance%20Cross%20Sell%20Prediction.ipynb)
+
+## Run on Docker
+
+```bash
+sudo docker build -f ./Dockerfile . -t myapp:latest && sudo docker-compose up -d
+```
+
+
+## Kubernetes
+
+```bash
+kubectl -f apply application/deployment.yml
+```
+
+
 ## Repository structure
 Project Organization
 ------------
