@@ -114,6 +114,12 @@ streamlit run app.py
 
 To explore the notebook file [here](https://github.com/dev-hack95/health_insurance_cross_sell_prediction/blob/dev-bac/notebooks/Health%20Insurance%20Cross%20Sell%20Prediction.ipynb)
 
+## Run on Docker
+
+```bash
+sudo docker build -f ./Dockerfile . -t myapp:latest && sudo docker-compose up -d
+```
+
 
 ## Kubernetes
 
