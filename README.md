@@ -49,7 +49,7 @@ Health-Insurnace-Cross-Sell-Prediction
 
 ## Quick glance at the results
 
-'''bash
+```bash
 {'Logistic_Regression': 0.7835004557885141,
  'Navie_Bayes': 0.7813354603463992,
  'lda': 0.7843740504405956,
@@ -60,7 +60,7 @@ Health-Insurnace-Cross-Sell-Prediction
  'knn_classifier': 0.8704421148587056,
  'Decision_tree': 0.8915223336371924,
  'Extr_tree': 0.9226678821027043}
- '''
+ ```
  
 Top 3 models (with default parameters)
 
@@ -100,9 +100,9 @@ pip install -r requirements.txt
 ```
 5) DVC
 
-'''bash
+```bash
 dvc repro
-'''
+```
 
 6) Run application
 
