@@ -84,13 +84,13 @@ git init
 2) Clone the project
 
 ```bash
-git clone -b dev-bac https://github.com/dev-hack95/Diabetes_detection
+git clone -b dev-bac https://github.com/dev-hack95/health_insurance_cross_sell_prediction
 ```
 
 3) Enter the project directory
 
 ```bash
-cd Diabetes_detection
+cd health_insurance_cross_sell_prediction
 ```
 
 4) Install the requriments
