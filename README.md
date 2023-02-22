@@ -25,7 +25,7 @@ Health-Insurnace-Cross-Sell-Prediction
   - [Results](#Results)
   
 ## Problem Statement
-  - Create a machine learning model on diabetes detection
+  - Create a machine learning model for finance company that will predict the defaulters for insurance
 
 ## Methods
 
