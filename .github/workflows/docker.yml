@@ -1,0 +1,20 @@
+name: Create docker image
+
+on:
+  workflow_diaptch
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - 
+        id: tagging-startegy
+        uses: HackerHappyHour/tagging-strategy@v3
+        with:
+          tags: 'v-%X%'
+          tag_name: 1.0.0
+
+      - name: Checkout Dockerfile and build container
+        run: |
+        if [-f Dockerfile] then; docker build -f ./Docerfile -t myapp:${{ steps.tagging-strategy.outputs.tags }}
