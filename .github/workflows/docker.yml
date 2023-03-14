@@ -17,4 +17,4 @@ jobs:
 
       - name: Checkout Dockerfile and build container
         run: |
-        if [-f Dockerfile] then; docker build -f ./Docerfile -t myapp:${{ steps.tagging-strategy.outputs.tags }}
+          if [-f Dockerfile] then; docker build -f ./Docerfile -t myapp:${{ steps.tagging-strategy.outputs.tags }}
