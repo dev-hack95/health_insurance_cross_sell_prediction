@@ -48,4 +48,4 @@ print(acc)
 #disp = sns.heatmap(conf_matrix/np.sum(conf_matrix), annot=True, cmap='Blues', fmt='.2%')
 #plt.savefig("plot.png")
 
-#pickle.dump(clf, open('./artifacts/model.pkl', 'wb'))
+pickle.dump(clf, open('./artifacts/model.pkl', 'wb'))

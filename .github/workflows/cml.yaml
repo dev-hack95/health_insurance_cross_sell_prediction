@@ -16,7 +16,7 @@ jobs:
           python ./src/models/train_model.py
  
           # Create CML report
-          cat ./artifacts/metrics/BaggingClassifier/metrics.txt >> report.md
+          #cat ./artifacts/metrics/BaggingClassifier/metrics.txt >> report.md
           echo '![](./artifacts/metrics/BaggingClassifier/plot.png "Confusion Matrix")' >> report.md
           cml comment create report.md
         env:
