@@ -20,21 +20,32 @@ x, y = smote.fit_resample(x, y)
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
 
-clf = BaggingClassifier(estimator=DecisionTreeClassifier(), n_estimators=100, oob_score=True)
+clf = BaggingClassifier(
+    estimator=DecisionTreeClassifier(criterion='gini',
+      max_depth=50,
+      min_samples_split=3
+      ),
+    n_estimators=300,
+    bootstrap_features=True,
+    oob_score=True,
+    max_features=1.0
+    )
+
 
 
 clf.fit(x_train , y_train)
 y_pred = clf.predict(x_test)
-accuracy = clf.score(x_test, y_test)
-print(accuracy)
+acc = clf.score(x_test, y_test)
+print(acc)
 
-acc = accuracy * 100
+#metrics = """
+#Accuracy: {:10.4f}
+#![Confusion Matrix](plot.png)
+#""".format(acc)
+#with open("metrics.txt", "w") as outfile:
+#    outfile.write(metrics)
+#conf_matrix = confusion_matrix(y_test, y_pred)
+#disp = sns.heatmap(conf_matrix/np.sum(conf_matrix), annot=True, cmap='Blues', fmt='.2%')
+#plt.savefig("plot.png")
 
-tn, fp, fn, tp = confusion_matrix(y, y_pred).ravel()
-specificity = tn / (tn + fp)
-sensitivity = tp / (tp + fn)
-
-with open('metrics.json') as outfile:
-    json.dump({ "accuracy": acc,  "specificity": specificity, "sensitivity": sensitivity })
-
-pickle.dump(clf, open('./artifacts/model.pkl', 'wb'))
+#pickle.dump(clf, open('./artifacts/model.pkl', 'wb'))
