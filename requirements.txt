@@ -3,5 +3,6 @@ numpy
 scikit-learn
 dvc
 matplotlib
+streamlit
 seaborn
 imbalanced-learn

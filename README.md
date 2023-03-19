@@ -47,6 +47,70 @@ Health-Insurnace-Cross-Sell-Prediction
 - CML
 - Github actions
 
+## Run Locally
+
+1) Initialize git
+
+```bash
+git init
+```
+
+
+2) Clone the project
+
+```bash
+git clone -b dev-bac https://github.com/dev-hack95/health_insurance_cross_sell_prediction
+```
+
+3) enter the project directory
+
+```bash
+cd health_insurance_cross_sell_prediction
+```
+
+4) install the requriments
+
+```bash
+pip install -r requirements.txt
+```
+
+5) run application
+
+```bash
+streamlit run app.py
+```
+
+## RUN on docker
+
+
+1) Clone the project
+
+```bash
+git clone -b dev-bac https://github.com/dev-hack95/health_insurance_cross_sell_prediction
+```
+
+2) enter the project directory
+
+```bash
+cd health_insurance_cross_sell_prediction
+```
+
+3) Build Docker image
+
+```bash
+docker build -f ./Dockerfile . -t myapp:latest
+```
+
+4) Run docker-compose
+```bash
+docker-compose up -d
+```
+
+5) Stop container
+```bash
+docker-compose down
+```
+
 ## Repository structure
 Project Organization
 ------------
